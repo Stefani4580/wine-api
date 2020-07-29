@@ -1,5 +1,18 @@
 # W2D4: Rendering information and HTTP methods - Wine API
 
+# Installation Requirements
+npm install react-bootstrap bootstrap
+npm i react-router-dom 
+npm i axios
+
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
