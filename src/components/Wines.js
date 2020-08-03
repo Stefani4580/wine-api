@@ -29,13 +29,21 @@ const Wines = (props) => {
         getWines();
     }, [])
 
-
+const wines = data.map((wine) => {
+        return (
+            <ListGroup.Item key={wine.id}><Link to={`${url}/${wine.id}`}>{`${wine.name} (${wine.year})`}</Link></ListGroup.Item>    
+        )
+})
 
     return (
       <div>
         <h1>Wines</h1>
-        <ul>
-          { data ? data.map(book => <li key={ book.id }><Link to={ `${url}/${book.id}` }>{ book.title }</Link></li>): "Loading..."}
+        <ListGroup>
+
+        {wines}
+          {/* { data ? data.map(book => <li key={ book.id }><Link to={ `${url}/${book.id}` }>{ book.title }</Link></li>): "Loading..."} */}
+
+        </ListGroup>
         </ul>
         <Switch>
           <Route exact path={path}>
