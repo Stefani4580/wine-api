@@ -19,6 +19,7 @@ const Wines = (props) => {
       const response = await axios.get(
         "http://myapi-profstream.herokuapp.com/api/6054d6/wines"
       );
+      console.log("This is response.data: ", response.data);
       setData(response.data);
     } catch (e) {
       console.error(e);
@@ -30,24 +31,24 @@ const Wines = (props) => {
     getWines();
   }, []);
 
-  const wines = data.map((wine) => {
-    return (
-      <ListGroup.Item key={wine.id}>
-        <Link to={`${url}/${wine.id}`}>{`${wine.name} (${wine.year})`}</Link>
-      </ListGroup.Item>
-    );
-  });
+//   const wines = data.map((wine) => {
+//     return (
+//       <ListGroup.Item key={wine.id}>
+//         <Link to={`${url}/${wine.id}`}>{`${wine.name} (${wine.year})`}</Link>
+//       </ListGroup.Item>
+//     );
+//   });
 
   return (
     <div>
       <h1>Wines</h1>
       <ListGroup>
-        {wines}
-        {/* { data ? data.map(book => <li key={ book.id }><Link to={ `${url}/${book.id}` }>{ book.title }</Link></li>): "Loading..."} */}
+        {/* {wines} */}
+        { data ? data.map(wine => <li key={ wine.id }><Link to={ `${url}/${wine.id}` }>{ wine.name }</Link></li>): "Loading..."}
       </ListGroup>
       <Switch>
         <Route exact path={path}>
-          <h3>Choose a book in the list above</h3>
+          <h3>Choose a wine in the list above</h3>
         </Route>
         <Route path={`${path}/:wineId`}>
           <Wine />
