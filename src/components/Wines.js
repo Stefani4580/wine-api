@@ -8,6 +8,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import Wine from "./Wine";
+import ListGroup from "react-bootstrap/ListGroup";
 
 const Wines = (props) => {
   let { path, url } = useRouteMatch();
@@ -48,8 +49,8 @@ const Wines = (props) => {
         <Route exact path={path}>
           <h3>Choose a book in the list above</h3>
         </Route>
-        <Route path={`${path}/:bookId`}>
-          <Book />
+        <Route path={`${path}/:wineId`}>
+          <Wine />
         </Route>
       </Switch>
     </div>
