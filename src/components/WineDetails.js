@@ -28,4 +28,3 @@ function WineDetails(props) {
 }
 
 export default WineDetails;
-props;
