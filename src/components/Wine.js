@@ -8,6 +8,20 @@ const Wine = () => {
     let { wineId } = useParams();
     const [data, setData] = useState(null);
 
+    async function getWineByID() {
+        try {
+          const response = await axios.get(
+            `http://myapi-profstream.herokuapp.com/api/6054d6/wines/${wineId}`
+          );
+          setData(response.data);
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    
+      useEffect(() => {
+        getWineByID();
+
 
     return (
         <div>
