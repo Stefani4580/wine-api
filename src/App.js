@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Wines from "./components/Wines";
+import WinesAPI from "./components/WinesAPI";
 
 function App() {
   return (
     <div className="App">
-      <Wines />
+      <WinesAPI />
     </div>
   );
 }
