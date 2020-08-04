@@ -19,7 +19,6 @@ const Wines = (props) => {
       const response = await axios.get(
         "http://myapi-profstream.herokuapp.com/api/6054d6/wines"
       );
-      console.log("This is response.data: ", response.data);
       setData(response.data);
     } catch (e) {
       console.error(e);
