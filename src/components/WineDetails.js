@@ -10,12 +10,10 @@ function WineDetails(props) {
         <Card.Img variant="top" src={props.pic} />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
-          <Card.Text>
-            {props.desc}
-          </Card.Text>
+          <Card.Text>{props.desc}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-  <ListGroupItem>{props.year}</ListGroupItem>
+          <ListGroupItem>{props.year}</ListGroupItem>
           <ListGroupItem>{props.grapes}</ListGroupItem>
           <ListGroupItem>{props.country}</ListGroupItem>
           <ListGroupItem>{props.region}</ListGroupItem>

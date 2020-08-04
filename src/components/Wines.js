@@ -31,29 +31,37 @@ const Wines = (props) => {
     getWines();
   }, []);
 
-//   const wines = data.map((wine) => {
-//     return (
-//       <ListGroup.Item key={wine.id}>
-//         <Link to={`${url}/${wine.id}`}>{`${wine.name} (${wine.year})`}</Link>
-//       </ListGroup.Item>
-//     );
-//   });
+  //   const wines = data.map((wine) => {
+  //     return (
+  //       <ListGroup.Item key={wine.id}>
+  //         <Link to={`${url}/${wine.id}`}>{`${wine.name} (${wine.year})`}</Link>
+  //       </ListGroup.Item>
+  //     );
+  //   });
 
   return (
     <div>
       <h1>Wines</h1>
-      <ListGroup>
-        {/* {wines} */}
-        { data ? data.map(wine => <li key={ wine.id }><Link to={ `${url}/${wine.id}` }>{ wine.name }</Link></li>): "Loading..."}
-      </ListGroup>
-      <Switch>
-        <Route exact path={path}>
-          <h3>Choose a wine in the list above</h3>
-        </Route>
-        <Route path={`${path}/:wineId`}>
-          <Wine />
-        </Route>
-      </Switch>
+      <Router>
+        <ListGroup>
+          {/* {wines} */}
+          {data
+            ? data.map((wine) => (
+                <li key={wine.id}>
+                  <Link to={`${url}/${wine.id}`}>{wine.name}</Link>
+                </li>
+              ))
+            : "Loading..."}
+        </ListGroup>
+        <Switch>
+          <Route exact path={path}>
+            <h3>Choose a wine in the list above</h3>
+          </Route>
+          <Route path={`${path}/:wineId`}>
+            <Wine />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };

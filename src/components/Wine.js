@@ -20,7 +20,7 @@ const Wine = () => {
 
   useEffect(() => {
     getWineByID();
-  }, []);
+  });
 
   return (
     <div>
