@@ -24,8 +24,8 @@ const Wine = () => {
 
   return (
     <div>
-        {/* { data ? <BookDetails book={ data } /> : "Retrieving book details..." } */}
-        { data ?( 
+        { data ? <WineDetails wine={ data } /> : "Retrieving book details..." }
+        {/* { data ?( 
       <WineDetails
         name={data.name}
         year={data.year}
@@ -36,7 +36,7 @@ const Wine = () => {
         pic={data.picture}
         price={data.price}
       />)
-        : "Loading..."}
+        : "Loading..."} */}
     </div>
   );
 };
