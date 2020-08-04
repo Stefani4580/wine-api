@@ -7,17 +7,17 @@ function WineDetails(props) {
   return (
     <div>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={props.pic} />
+        <Card.Img variant="top" src={props.wine.picture} />
         <Card.Body>
-          <Card.Title>{props.name}</Card.Title>
-          <Card.Text>{props.desc}</Card.Text>
+          <Card.Title>{props.wine.name}</Card.Title>
+          <Card.Text>{props.wine.description}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>{props.year}</ListGroupItem>
-          <ListGroupItem>{props.grapes}</ListGroupItem>
-          <ListGroupItem>{props.country}</ListGroupItem>
-          <ListGroupItem>{props.region}</ListGroupItem>
-          <ListGroupItem>${props.price}</ListGroupItem>
+          <ListGroupItem>{props.wine.year}</ListGroupItem>
+          <ListGroupItem>{props.wine.grapes}</ListGroupItem>
+          <ListGroupItem>{props.wine.country}</ListGroupItem>
+          <ListGroupItem>{props.wine.divregion}</ListGroupItem>
+          <ListGroupItem>${props.wine.price}</ListGroupItem>
         </ListGroup>
       </Card>
     </div>
